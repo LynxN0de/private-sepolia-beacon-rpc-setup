@@ -245,9 +245,12 @@ Once both nodes are synced, you can use the following endpoints for your node:
 
 
 ## Additional Tips
-- Sync Time: Geth may take 24-48 hours to sync. Prysm syncs faster with the checkpoint URL. Be patient during initial setup.
-- Security: Never expose port 8545 publicly without IP whitelisting, as it allows transaction submissions and can be abused.
-- Backup: Regularly back up `/root/ethereum` to preserve node data.
+ - Sync Time: Geth may take 24-48 hours to sync. Prysm syncs faster with the checkpoint URL. Be patient during initial setup.
+ - Security: Never expose port 8545 publicly without IP whitelisting, as it allows transaction submissions and can be abused.
+ - Backup: Regularly back up `/root/ethereum` to preserve node data.
 
-
+## Why This Setup?
+ - Running your own Sepolia and Beacon chain nodes avoids rate limits from providers like Alchemy or Infura, which is critical for Aztec Network’s sequencer or development needs.
+ - The Docker-based setup simplifies dependency management and ensures reproducibility.
+ - The provided endpoints (`http://<your-vps-ip>:8545` for execution, `http://<your-vps-ip>:3500` for Beacon) are compatible with Aztec’s requirements for private, high-performance RPC access.
 
